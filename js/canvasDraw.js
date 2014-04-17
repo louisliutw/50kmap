@@ -54,8 +54,8 @@
       /*鼠标按下事件，记录鼠标位置，并绘制，解锁lock，打开mousemove事件*/
       this.canvas['on' + t.StartEvent] = function(e) {
         var touch = t.touch ? e.touches[0] : e;
-        var _x = touch.clientX - $('#Wrapper2').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
-        var _y = touch.clientY - $('#Wrapper2').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
+        var _x = touch.clientX - $('#myCanvas').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
+        var _y = touch.clientY - $('#myCanvas').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
         // console.log($('#Wrapper2').offset().left);
         if (t.isEraser) {
           /*
@@ -78,8 +78,8 @@
         var touch = t.touch ? e.touches[0] : e;
         if (t.lock) //t.lock为true则执行
         {
-          var _x = touch.clientX - $('#Wrapper2').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
-          var _y = touch.clientY - $('#Wrapper2').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
+          var _x = touch.clientX - $('#myCanvas').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
+          var _y = touch.clientY - $('#myCanvas').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
           if (t.isEraser) {
             //if(t.Timer)clearInterval(t.Timer);
             //t.Timer=setInterval(function(){
