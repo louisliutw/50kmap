@@ -1,0 +1,73 @@
+  <!doctype html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Canvas Draw</title>
+    <script type='text/javascript'
+    src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.js'></script>
+  </head>
+  <body >
+    <style>
+      *{margin:0;padding:0;}
+      .fa{width:100%;margin:0 auto;}
+      .top{margin:0;}
+      .top input{solid #fff;border-radius:4px;background:#ddd;}
+      .top .i1{background:#000000;}
+      .top .i2{background:#FF0000;}
+      .top .i3{background:#80FF00;}
+      .top .i4{background:#00FFFF;}
+      .top .i5{background:#808080;}
+      .top .i6{background:#FF8000;}
+      .top .i7{background:#408080;}
+      .top .i8{background:#8000FF;}
+      .top .i9{background:#CCCC00;}
+      #canvas, #canvas1{/*background:#eee;*/cursor:default;}
+      .font input{font-size:14px;}
+      .top .grea{background:#aaa;}
+      #canvasID canvas{position: absolute;}
+    </style>
+  </head>
+  <body>
+    <div class="fa">
+      <div class="top">
+        <!-- <div id="color">
+          Color：
+          <input class="i1" type="button" value="" />
+          <input class="i2" type="button" value="" />
+          <input class="i3" type="button" value="" />
+          <input class="i4" type="button" value="" />
+          <input class="i5" type="button" value="" />
+          <input class="i6" type="button" value="" />
+          <input class="i7" type="button" value="" />
+          <input class="i8" type="button" value="" />
+          <input class="i9" type="button" value="" />
+        </div> -->
+        <!-- <div class="font" id="font">
+          Size：
+          <input type="button" value="S" />
+          <input type="button" value="M" class="grea"/>
+          <input type="button" value="L" />
+        </div> -->
+        <input type="button" id="markButton" value="Mark" style="width: 60px;">
+        <input type="button" id="changeColor" value="ChangeColor" style="width: 80px;">
+        <input type="button" id="draw" value="Draw" style="width: 60px;">
+        <input id="eraser" style="width:60px;font-size:14px;"type="button" value="Eraser" />
+        <input id="clear" type="button" value="Clean" style="width:80px;"/>
+        <input id="imgurl" type="button" value="Output" style="width:80px;"/>
+        <a href="" id="download" image="image/png" download="save.png" style="display:none;">Output</a>
+        <div style="margin:0px;">
+          <input id="mark" type="text" size="30" style="display: none;">
+          <input type="button" value="Set" id="setMark" style="width: 60px; display: none;">
+        </div>
+      </div>
+      <div id="canvasID">
+        <canvas id="canvas" style="z-index: 1;">Your browser can't support canvas tag.</canvas>
+      </div>
+      <div id="div1"></div>
+    </div>
+    <div id="html">
+    </div>
+    <div style="clear:both"></div>
+  </body>
+  </html>
+
+  <script src="canvasDraw.js"></script>
