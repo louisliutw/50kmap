@@ -105,6 +105,9 @@
       };
       /*Draw*/
       this.$('draw').onclick = function(e) {
+	document.getElementById('Canvas').setAttribute('class', 'pointerEnabel');
+	document.getElementById('Map').setAttribute('class', 'pointerDisable');
+	Map.fix();
         t.isEraser = false;
         t.cxt.strokeStyle = t.color[t.colorID];
       }
