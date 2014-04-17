@@ -1,0 +1,59 @@
+﻿body {
+	background-color:#EBEBEB;
+}
+#WRAPPER {
+	margin:0 auto;
+	width:770px;
+	height:520px;
+	padding:0 10px;
+	background-color:#698B22;
+	/*background:url("http://img02.tooopen.com/images/20140401/sy_58062953384.jpg	");*/
+	overflow:auto;
+}
+
+#Map {
+	float:left;
+	width:600px;
+	height:500px;
+	margin-left:10px;
+	margin-top:10px;
+	background-color:#FFEC8B;
+	background:url("http://free-texture.net/wp-content/uploads/Brass-HairLine1.jpg");
+}
+
+#Function {
+	margin-left:610px;
+	margin-top:10px;
+	width:150px;
+	height:500px;
+	background-color:#FFA500;
+	background:url("http://pic19.nipic.com/20120323/9137309_112359193155_2.jpg");
+}
+
+button {
+	color:#4D4D4D;
+	font-size:130%;
+	font-family: JOKERMAN;
+	margin-left:30px;
+	margin-top:15px;
+	width: 80px; 
+	height: 80px; 
+	-moz-border-radius: 40px; 
+	-webkit-border-radius: 40px; 
+	border-radius: 40px; 
+	/*background-image:url(pic/ocean3.jpg);*/
+	background:url("file:///C:/Users/nero/Documents/efoxconn/比賽/pic/button1.jpg");
+	border:2px #CDC5BF solid; 
+	glow(color=#Ff0000,strength=40);
+	box-shadow:2px 2px 4px #666;
+}
+
+button:hover,button.hover {
+	box-shadow:2px 2px 2px 2px red;
+   /*color:#EE9A49;
+   background: -webkit-gradient(linear, left top, right bottom, from(#FFFAF0), to(#FFC125));
+   background: -moz-gradient(linear, left top, right bottom, from(#FFFAF0), to(#FFC125));
+*/
+   }
+
+
