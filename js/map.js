@@ -55,12 +55,10 @@ var Map = new function CanvasMap(){
       };
 
       var addMarkToLatLng = function addMarkToLatLng(text, point){
-        marker = L.marker(point).addTo(map);
+        var marker = L.marker(point).addTo(map);
         markers.push({'marker': marker, 'LatLng': point, 'text': text});
-        marker.on('click', function(e){
-          this.bindPop(text).openPopup();
-        });
-      }
+        marker.bindPopup(text);
+      };
 
       this.addMarkTo = function addMarkTo(text, x, y){
         point = map.containerPointToLatLng([x, y]);
@@ -89,8 +87,9 @@ var Map = new function CanvasMap(){
 
       var putOverlay = function putOverlay(){
         imageLayer = L.imageOverlay(overlayImage, posJSON.pos.bound).addTo(map);
-        for(var i = 0; i < posJSON.markers; i++){
-          var point = L.latlng(posJSON.markers[i].latlng);
+        for(var i = 0; i < posJSON.markers.length; i++){
+          var p = posJSON.markers[i].latlng;
+          var point = L.latLng(p[0], p[1]);
           addMarkToLatLng(posJSON.markers[i].text, point);
         }
         document.getElementById('Canvas').setAttribute('class', 'pointerDisable');
