@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+	<meta content="text/html; charset=utf-8" />
+	<title>靡鹿班比</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="NANF.js"></script>
+	<script src="js/jquery-1.7.1.js"></script>
+	<script src="js/imageinfo/binaryajax.js"></script>
+	<script src="js/imageinfo/exif.js"></script>
+	<script src="js/imageinfo/imageinfo.js"></script>
+	<script type="text/javascript">
+		function file_viewer_load(controller) {
+			var s = "Type of files[0]: " + controller.files[0].toString() + "\n" +
+			        "File name: " + controller.files[0].name + "\n" +
+			        "File size: " + controller.files[0].size + "\n" +
+			        "File type: " + controller.files[0].type;
+			alert(s);
+		}
+	</script>
+	<script type="text/javascript">
+		function FileViewer(args) {
+			for (var p in args)
+				this[p] = args[p];
+			  this.reader = new FileReader();	 
+				this.reader.onloadend = (function(self) {
+					return function() { 
+					   self.loaded();
+					}})(this);
+		}
+		FileViewer.prototype.load = function() {
+			this.file = this.controller.files[0];
+			this.reader.readAsText(this.file);
+		}
+		FileViewer.prototype.loaded = function() {
+	    this.view_name.value = this.file.name;
+		  this.view_size.value = this.file.size;
+		  this.view.value = this.reader.result;
+		}
+ 
+		var file_viewer = undefined;
+ 
+		function init() {
+			file_viewer = new FileViewer({controller: document.getElementById('file_selector'),
+															      view_name: document.getElementById('show_filename'),
+																		view_size: document.getElementById('show_filesize'),
+																		view: document.getElementById('show_box')});
+		}
+	</script>
+	<!--<script type="text/javascript" >
+		// URL of the image (must be on the same domain!)
+		var file = "prettypicture.jpg";
+		// define your own callback function
+		function mycallback() {
+		   // either call the ImageInfo.getAllFields([file]) function which returns an object holding all the info
+		   alert("All info about this file: " + ImageInfo.getAllFields(file).toSource());
+			// or call ImageInfo.getField([file], [field]) to get a specific field
+			    alert("Format: " + ImageInfo.getField(file, "format") + ", dimensions : " + ImageInfo.getField(file, "width") + "x" + ImageInfo.getField(file, "height"));
+	}
+		// finally, load the data
+		ImageInfo.loadInfo(file, mycallback);
+	</script>-->
+	<script type="text/javascript">
+		function ImageViewer(args) {
+			for (var p in args)
+					this[p] = args[p]; 
+					this.reader = new FileReader(); 
+					function _event_handler(self, method) {
+						return function(){
+		            method.call(self); };
+					}
+			this.reader.onloadend = _event_handler(this, this.loaded);
+		}
+		ImageViewer.prototype.load = function() {
+			this.file = this.controller.files[0];
+			this.reader.readAsDataURL(this.file);
+		}
+
+		ImageViewer.prototype.loaded = function() {
+	    this.view_name.value = this.file.name;
+		  this.view_size.value = this.file.size;
+		  this.view_data.value = this.reader.result.substring(0,100);					 
+					if ( ! /^image/.test(this.file.type) )
+					   alert("This is not an image file. Type: " + this.file.type);
+					else
+					   this.view.src = this.reader.result;
+			}
+ 
+		var file_viewer = undefined;
+ 
+		function init() {
+	    file_viewer = new ImageViewer({
+		  controller: document.getElementById('file_selector'),
+		  view_name: document.getElementById('show_filename'),
+		  view_size: document.getElementById('show_filesize'),
+		  view: document.getElementById('show_image'),
+		  view_data: document.getElementById('show_data')});
+		}
+	</script>
+
+</head>
+<body onload="init();">
+	<!--<div>
+		<input id="file_selector" type="file" value=""
+			 onchange="file_viewer_load(this);"/>
+	</div>
+	<hr/>-->
+	
+	<!--<div>
+		<input id="file_selector" type="file" value=""  onchange="file_viewer.load();"/>
+	</div>		 
+	<div>
+				Name: <input id="show_filename" type="text" readonly="true" value=""/>
+				Size: <input id="show_filesize" type="text" readonly="true" value=""/>
+				<br/>
+				<textarea id="show_box" readonly="true" cols="60" rows="20"></textarea>
+	</div>-->
+
+	<div>
+		<input id="file_selector" type="file" value=""
+		    onchange="file_viewer.load();"/>
+	</div>		 
+	<div>
+				Name: <input id="show_filename" type="text" readonly="true" value=""/>
+				Size: <input id="show_filesize" type="text" readonly="true" value=""/>
+				<br/>
+				<textarea id="show_data" readonly="true" cols="60" rows="2"></textarea>
+				<br/>
+				<img id="show_image" alt="Show Image" />
+	</div>
+</body>
+</html>
+
