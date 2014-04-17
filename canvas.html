@@ -23,13 +23,15 @@
 	</script>
 </head>
 <body >
-	<canvas id="myCanvas"
-	width="0" height="0">
-		Your browser does not support the canvas element.
-	</canvas>
 
 <div id="WRAPPER">
   <div id="Map">
+  	<div id="Canvas">
+  		<canvas id="myCanvas"
+				width="0" height="0">
+					Your browser does not support the canvas element.
+			</canvas>
+  	</div>
   </div>
   <div id="Function" >
 	<button onclick="Load()">Load</button>
@@ -40,6 +42,7 @@
 	<button id="draw">Write</button>
 	<button id="changeColor">Color</button>
 	<button id="eraser">Eraser</button>
+	<button id="mark">Mark</button>
 	<!-- <button onclick="clearRecords()">Eraser</button> -->
   </div>
 </div>
