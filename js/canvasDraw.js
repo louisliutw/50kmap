@@ -8,6 +8,9 @@
       this.y = []; //记录鼠标移动是的Y坐标
       this.clickDrag = [];
       this.lock = false; //鼠标移动前，判断鼠标是否按下
+      this.markLock = false;
+      this.markX;
+      this.markY;
       this.isEraser = false;
       //this.Timer=null;//橡皮擦启动计时器
       //this.radius=5;
@@ -54,17 +57,15 @@
       /*鼠标按下事件，记录鼠标位置，并绘制，解锁lock，打开mousemove事件*/
       this.canvas['on' + t.StartEvent] = function(e) {
         var touch = t.touch ? e.touches[0] : e;
-        var _x = touch.clientX - touch.target.offsetLeft; //鼠标在画布上的x坐标，以画布左上角为起点
-        var _y = touch.clientY - touch.target.offsetTop; //鼠标在画布上的y坐标，以画布左上角为起点
+        var _x = touch.clientX - $('#myCanvas').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
+        var _y = touch.clientY - $('#myCanvas').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
+        // console.log($('#Wrapper2').offset().left);
+        if(t.markLock){
+          t.markX = _x;
+          t.markY = _y;
+          return;
+        }
         if (t.isEraser) {
-          /*
-  t.cxt.globalCompositeOperation = "destination-out";
-  t.cxt.beginPath();
-  t.cxt.arc(_x, _y,t.eraserRadius, 0, Math.PI * 2);
-  t.cxt.strokeStyle = "rgba(250,250,250,0)";
-  t.cxt.fill();
-  t.cxt.globalCompositeOperation = "source-over";
-  */
           t.resetEraser(_x, _y, touch);
         } else {
           t.movePoint(_x, _y); //记录鼠标位置
@@ -77,8 +78,8 @@
         var touch = t.touch ? e.touches[0] : e;
         if (t.lock) //t.lock为true则执行
         {
-          var _x = touch.clientX - touch.target.offsetLeft; //鼠标在画布上的x坐标，以画布左上角为起点
-          var _y = touch.clientY - touch.target.offsetTop; //鼠标在画布上的y坐标，以画布左上角为起点
+          var _x = touch.clientX - $('#myCanvas').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
+          var _y = touch.clientY - $('#myCanvas').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
           if (t.isEraser) {
             //if(t.Timer)clearInterval(t.Timer);
             //t.Timer=setInterval(function(){
@@ -123,12 +124,16 @@
         $('#mark').val('');
         $('#mark').css('display', 'block');
         $('#setMark').css('display', 'block');
+        t.markLock = true;
+        console.log(t.markLock);
       };
       $('#setMark').click(function(e){
         $('#mark').css('display', 'none');
         $('#setMark').css('display', 'none');
+        t.markLock = false;
         var markText = $('#mark').val();
-        console.log(markText);
+        Map.addMarkTo(markText, t.markX, t.markY);
+        // console.log(markText);
         // $("<img />", { src: paint.mapMark($('#mark').val(), {
         //         //注意: fontName所指定字型，需使用者機器上有安裝才算數
         //         fontName: "微軟正黑體", fontSize: 14, fontStyle: "bold",

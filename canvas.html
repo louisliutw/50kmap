@@ -12,8 +12,8 @@
 	img.src = 'pic/ocean2.jpg';
 
 	img.onload=function init(){
-	    var c=document.getElementById("myCanvas");
-		var paintback  =new  PaintBack(img);
+	 //    var c=document.getElementById("myCanvas");
+		// var paintback  =new  PaintBack(img);
 		/*window.addEventListener('keydown', doKeyDown, true);
 		var timer;
 		timer=setInterval(Move,500);
@@ -29,9 +29,9 @@
 
 <div id="WRAPPER">
   <div id="Wrapper2">
-    <div id="Map">
+    <div id="Map" class='pointerEnabel'>
     </div>
-    <div id="Canvas">
+    <div id="Canvas" class='pointerDisable'>
 	    <canvas id="myCanvas" width="600px" height="600px">
 				    Your browser does not support the canvas element.
 		  </canvas>
@@ -48,11 +48,11 @@
 	<button id="eraser">Eraser</button>
 	<button id="markButton">Mark</button>
 	<div class="switch demo1">
-					<input type="checkbox">
+					<input id='enableGPS' type="checkbox" onclick="Map.toggleFollow();">
 					<label></label>
 				</div>
 	<!-- <button onclick="clearRecords()">Eraser</button> -->
-	
+
   </div>
 </div>
 
@@ -62,6 +62,9 @@
 	<input id="mark" type="text" size="30" style="display: none;">
 	<input type="button" value="Set" id="setMark" style="width: 60px; display: none;">
 </div>
+<script>
+document.getElementById("enableGPS").checked = false;
+</script>
 
 </body>
 </html>
