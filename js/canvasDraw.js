@@ -20,8 +20,8 @@
         return typeof id == "string" ? document.getElementById(id) : id;
       };
       this.canvas = this.$("myCanvas");
-      this.canvas.width = window.innerWidth * 0.98;
-      this.canvas.height = window.innerHeight * 0.9;
+      // this.canvas.width = window.innerWidth * 0.98;
+      // this.canvas.height = window.innerHeight * 0.9;
       // this.$('canvas1').width = window.innerWidth * 0.98;
       // this.$('canvas1').height = window.innerHeight * 0.9;
       // console.log($("#canvas").position().left);
@@ -116,20 +116,22 @@
         t.colorID = (t.colorID+1)%2;
         t.cxt.strokeStyle = t.color[t.colorID];
       };
-      // this.$('markButton').onclick = function(e){
-      //   $('#mark').val('');
-      //   $('#mark').css('display', 'block');
-      //   $('#setMark').css('display', 'block');
-      // };
-      // $('#setMark').click(function(e){
-      //   $('#mark').css('display', 'none');
-      //   $('#setMark').css('display', 'none');
-      //   // $("<img />", { src: paint.mapMark($('#mark').val(), {
-      //   //         //注意: fontName所指定字型，需使用者機器上有安裝才算數
-      //   //         fontName: "微軟正黑體", fontSize: 14, fontStyle: "bold",
-      //   //         padding: 5, bgColor: "red", fgColor: "white"
-      //   //     }) }).appendTo("body");
-      // });
+      this.$('markButton').onclick = function(e){
+        $('#mark').val('');
+        $('#mark').css('display', 'block');
+        $('#setMark').css('display', 'block');
+      };
+      $('#setMark').click(function(e){
+        $('#mark').css('display', 'none');
+        $('#setMark').css('display', 'none');
+        var markText = $('#mark').val();
+        console.log(markText);
+        // $("<img />", { src: paint.mapMark($('#mark').val(), {
+        //         //注意: fontName所指定字型，需使用者機器上有安裝才算數
+        //         fontName: "微軟正黑體", fontSize: 14, fontStyle: "bold",
+        //         padding: 5, bgColor: "red", fgColor: "white"
+        //     }) }).appendTo("body");
+      });
 
     },
     movePoint: function(x, y, dragging) {

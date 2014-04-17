@@ -5,6 +5,7 @@
 	<title>靡鹿班比</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="NANF.js"></script>
+	<script src="js/jquery-1.7.1.js"></script>
 	<script type="text/javascript">
 
 	var img = new Image();
@@ -29,7 +30,7 @@
 <div id="WRAPPER">
   <div id="Map">
   	<div id="Canvas">
-  		<canvas id="myCanvas">
+  		<canvas id="myCanvas" width="600px" height="600px">
 					Your browser does not support the canvas element.
 			</canvas>
   	</div>
@@ -43,16 +44,20 @@
 	<button id="draw">Write</button>
 	<button id="changeColor">Color</button>
 	<button id="eraser">Eraser</button>
-	<button id="mark">Mark</button>
+	<button id="markButton">Mark</button>
 	<!-- <button onclick="clearRecords()">Eraser</button> -->
   </div>
 </div>
 
+<a href="" id="download" image="image/png" download="save.png" style="display:none;">Output</a>
+<div style="margin:0px;">
+	<input id="mark" type="text" size="30" style="display: none;">
+	<input type="button" value="Set" id="setMark" style="width: 60px; display: none;">
+</div>
 
-
-
-<script src='js/map.js'></script>
 </body>
 </html>
 
-<script src="canvasDraw.js"></script>
+
+<script src='js/map.js'></script>
+<script src="js/canvasDraw.js"></script>
