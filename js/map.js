@@ -1,7 +1,7 @@
 var Map = new function CanvasMap(){
       //var map = L.map('Map', {zoomControl:false}).setView([22.6079, 120.3042], 16);
       var map = L.map('Map', {zoomControl:false}).locate({'watch':false, 'setView': true});
-      
+
       var cycleMap = L.tileLayer('http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
           maxZoom: 18
@@ -60,6 +60,7 @@ var Map = new function CanvasMap(){
       };
 
       this.addMarkTo = function addMarkTo(text, x, y){
+        console.log(text+" "+x+" "+y);
         point = L.containerPointToLatLng(x, y);
         markers.push({'marker': marker, 'LatLng': point, 'text': text});
         marker = L.marker(point).addTo(map);
