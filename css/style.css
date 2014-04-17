@@ -3,9 +3,9 @@
 }
 #WRAPPER {
 	margin:0 auto;
-	width:770px;
+	width:750px;
 	height:700px;
-	padding:0 10px;
+	padding:0 0px;
 	background-color:#698B22;
 	/*background:url("http://img02.tooopen.com/images/20140401/sy_58062953384.jpg	");*/
 	overflow:auto;
@@ -24,8 +24,8 @@
 }
 
 #Function {
-	margin-left:610px;
-	margin-top:10px;
+	margin-left:600px;
+	margin-top:0px;
 	width:150px;
 	height:700px;
 	background-color:#FFA500;
@@ -227,4 +227,10 @@ a:hover {
 	z-index:10;
 	left: 10px;
 	bottom:10px;
+}
+
+.inputfile {
+    color: #4D4D4D; 
+	font-family: JOKERMAN;
+	font-size: 14px; 
 }

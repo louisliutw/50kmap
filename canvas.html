@@ -48,7 +48,13 @@
 		  </canvas>
 	<li><a href="" id="download" image="image/png" download="save.png" style="display:none;">Output</a></li>
 	<li><a href="" id="download_meta" image="text/json" download="save.json" style="display:none;">Output Meta</a></li>
-    </div>
+    
+	<div class='inputfile'>png:
+	<input type=file id='openfile' name='png file'/> <br />
+	meta:
+	<input type=file id='openfile_meta' name='json file'/></div>
+	
+	</div>
   </div>
   <div id="Function" >
 	<button onclick="Load()">Load</button>
@@ -67,13 +73,6 @@
 	<!-- <button onclick="clearRecords()">Eraser</button> -->
 
   </div>
-</div>
-
-<div>
-png:
-<input type=file id='openfile' name='png file'/> <br />
-meta:
-<input type=file id='openfile_meta' name='json file'/>
 </div>
 
 <div style="margin:0px;">
