@@ -1,6 +1,6 @@
 var Map = new function CanvasMap(){
       //var map = L.map('Map', {zoomControl:false}).setView([22.6079, 120.3042], 16);
-      var map = L.map('Map', {zoomControl:false}).locate({'watch':false, 'setView': true});
+      var map = L.map('Map', {zoomControl:false}).setView([22.6079, 120.3042], 16);//.locate({'watch':false, 'setView': false});
 
       var cycleMap = L.tileLayer('http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',

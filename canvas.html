@@ -48,7 +48,7 @@
 	<button id="eraser">Eraser</button>
 	<button id="markButton">Mark</button>
 	<div class="switch demo1">
-					<input type="checkbox">
+					<input id='enableGPS' type="checkbox" onclick="Map.toggleFollow();">
 					<label></label>
 				</div>
 	<!-- <button onclick="clearRecords()">Eraser</button> -->
@@ -62,6 +62,9 @@
 	<input id="mark" type="text" size="30" style="display: none;">
 	<input type="button" value="Set" id="setMark" style="width: 60px; display: none;">
 </div>
+<script>
+document.getElementById("enableGPS").checked = false;
+</script>
 
 </body>
 </html>
