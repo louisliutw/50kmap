@@ -19,7 +19,7 @@
       this.$ = function(id) {
         return typeof id == "string" ? document.getElementById(id) : id;
       };
-      this.canvas = this.$("canvas");
+      this.canvas = this.$("myCanvas");
       this.canvas.width = window.innerWidth * 0.98;
       this.canvas.height = window.innerHeight * 0.9;
       // this.$('canvas1').width = window.innerWidth * 0.98;
@@ -35,7 +35,7 @@
       this.cxt = this.canvas.getContext('2d');
       this.cxt.lineJoin = "round"; //context.lineJoin - 指定两条线段的连接方式
       this.cxt.lineWidth = 5; //线条的宽度
-      this.iptClear = this.$("clear");
+      // this.iptClear = this.$("clear");
       this.imgurl = this.$("imgurl"); //图片路径按钮
       this.w = this.canvas.width; //取画布的宽
       this.h = this.canvas.height; //取画布的高
@@ -48,9 +48,9 @@
     bind: function() {
       var t = this;
       /*清除画布*/
-      this.iptClear.onclick = function() {
-        t.clear();
-      };
+      // this.iptClear.onclick = function() {
+      //   t.clear();
+      // };
       /*鼠标按下事件，记录鼠标位置，并绘制，解锁lock，打开mousemove事件*/
       this.canvas['on' + t.StartEvent] = function(e) {
         var touch = t.touch ? e.touches[0] : e;
@@ -116,20 +116,20 @@
         t.colorID = (t.colorID+1)%2;
         t.cxt.strokeStyle = t.color[t.colorID];
       };
-      this.$('markButton').onclick = function(e){
-        $('#mark').val('');
-        $('#mark').css('display', 'block');
-        $('#setMark').css('display', 'block');
-      };
-      $('#setMark').click(function(e){
-        $('#mark').css('display', 'none');
-        $('#setMark').css('display', 'none');
-        // $("<img />", { src: paint.mapMark($('#mark').val(), {
-        //         //注意: fontName所指定字型，需使用者機器上有安裝才算數
-        //         fontName: "微軟正黑體", fontSize: 14, fontStyle: "bold",
-        //         padding: 5, bgColor: "red", fgColor: "white"
-        //     }) }).appendTo("body");
-      });
+      // this.$('markButton').onclick = function(e){
+      //   $('#mark').val('');
+      //   $('#mark').css('display', 'block');
+      //   $('#setMark').css('display', 'block');
+      // };
+      // $('#setMark').click(function(e){
+      //   $('#mark').css('display', 'none');
+      //   $('#setMark').css('display', 'none');
+      //   // $("<img />", { src: paint.mapMark($('#mark').val(), {
+      //   //         //注意: fontName所指定字型，需使用者機器上有安裝才算數
+      //   //         fontName: "微軟正黑體", fontSize: 14, fontStyle: "bold",
+      //   //         padding: 5, bgColor: "red", fgColor: "white"
+      //   //     }) }).appendTo("body");
+      // });
 
     },
     movePoint: function(x, y, dragging) {
