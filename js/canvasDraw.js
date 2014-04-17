@@ -205,6 +205,8 @@
       // window.open(this.canvas.toDataURL());
       this.$('download').href = this.canvas.toDataURL();
       this.$('download').style.display = "";
+      this.$('download_meta').href = Map.exportData();
+      this.$('download_meta').style.display = "";
     },
     resetEraser: function(_x, _y, touch) {
       /*使用橡皮擦-提醒*/

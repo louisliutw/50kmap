@@ -12,14 +12,19 @@ var Map = new function CanvasMap(){
       var marks = [];
       var follow = false;
 
+      var listMarks = function listMarks(){
+        return [];
+      };
+
       this.reset = function reset(){
         marks = [];
       };
 
-      this.getPos = function getPos(){
+      var getPos = function getPos(){
         var center = map.getCenter();
         return {'lng':center.lng, 'lat':center.lat, 'zoom': map.getZoom()}
       };
+      this.getPos = getPos;
 
       this.fix = function fix(){
         map.dragging.disable();
@@ -48,7 +53,7 @@ var Map = new function CanvasMap(){
       this.exportData = function exportData(){
         var pos = getPos();
         var marks = listMarks();
-        return {'pos': pos, 'marks': marks};
+        return 'data:text/json,' + encodeURIComponent(JSON.stringify({'pos': pos, 'marks': marks}));
       };
 
       this.addMarkTo = function addMark(){
