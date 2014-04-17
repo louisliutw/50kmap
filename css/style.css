@@ -4,7 +4,7 @@
 #WRAPPER {
 	margin:0 auto;
 	width:770px;
-	height:520px;
+	height:620px;
 	padding:0 10px;
 	background-color:#698B22;
 	/*background:url("http://img02.tooopen.com/images/20140401/sy_58062953384.jpg	");*/
@@ -14,7 +14,7 @@
 #Map {
 	float:left;
 	width:600px;
-	height:500px;
+	height:600px;
 	margin-left:10px;
 	margin-top:10px;
 	background-color:#FFEC8B;
@@ -25,7 +25,7 @@
 	margin-left:610px;
 	margin-top:10px;
 	width:150px;
-	height:500px;
+	height:600px;
 	background-color:#FFA500;
 	background:url("http://pic19.nipic.com/20120323/9137309_112359193155_2.jpg");
 }

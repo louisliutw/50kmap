@@ -10,15 +10,15 @@
 	var img = new Image();
 	img.src = 'pic/ocean2.jpg';
 
-	// img.onload=function init(){
-	 //    var c=document.getElementById("myCanvas");
-		// var paintback  =new  PaintBack(img);
+	img.onload=function init(){
+	    var c=document.getElementById("myCanvas");
+		var paintback  =new  PaintBack(img);
 		/*window.addEventListener('keydown', doKeyDown, true);
 		var timer;
 		timer=setInterval(Move,500);
 		var caneltimer  =new  CanelTimer(timer);
 		setInterval(CanelTimer,50);*/
-	// }
+	}
 
 	</script>
 </head>
@@ -27,8 +27,7 @@
 <div id="WRAPPER">
   <div id="Map">
   	<div id="Canvas">
-  		<canvas id="myCanvas"
-				width="0" height="0">
+  		<canvas id="myCanvas">
 					Your browser does not support the canvas element.
 			</canvas>
   	</div>
