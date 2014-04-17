@@ -44,7 +44,7 @@ button {
 	-webkit-border-radius: 40px; 
 	border-radius: 40px; 
 	/*background-image:url(pic/ocean3.jpg);*/
-	background:url("file:///C:/Users/nero/Documents/efoxconn/比賽/pic/button1.jpg");
+	background:url("../pic/button1.jpg");
 	border:2px #CDC5BF solid; 
 	glow(color=#Ff0000,strength=40);
 	box-shadow:2px 2px 4px #666;
@@ -140,7 +140,7 @@ button:hover,button.hover {
 .switch.demo1 label {
   border-radius: 50%;
   background: #eaeaea;
-  background:url("file:///C:/Users/nero/Documents/efoxconn/比賽/pic/button1.jpg");
+  background:url("../pic/button1.jpg");
   box-shadow: 
       0 3px 5px rgba(0,0,0,0.25),
       inset 0 1px 0 rgba(255,255,255,0.3),
@@ -191,7 +191,7 @@ button:hover,button.hover {
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#dedede), to(#fdfdfd));
   background: -webkit-linear-gradient(#dedede, #fdfdfd);
   background: linear-gradient(#dedede, #fdfdfd);
-  background:url("file:///C:/Users/nero/Documents/efoxconn/比賽/pic/button1.jpg");
+  background:url("../pic/button1.jpg");
 }
 
 .switch.demo1 input:checked ~ label:before {
