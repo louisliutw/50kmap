@@ -7,17 +7,20 @@ var Map = new function CanvasMap(){
           maxZoom: 18
       }).addTo(map);
       L.control.layers(
-          {'Cycle Map': cycleMap}
-          )
-      var marks = [];
+          {'Cycle Map': cycleMap,
+          'Cycle MapII': cycleMap}
+          );
+      var markers = [];
       var follow = false;
+      var posJSON = null;
+      var overlay = null;
 
       var listMarks = function listMarks(){
         return [];
       };
 
       this.reset = function reset(){
-        marks = [];
+        markers = [];
       };
 
       var getPos = function getPos(){
@@ -52,11 +55,17 @@ var Map = new function CanvasMap(){
 
       this.exportData = function exportData(){
         var pos = getPos();
-        var marks = listMarks();
-        return 'data:text/json,' + encodeURIComponent(JSON.stringify({'pos': pos, 'marks': marks}));
+        var markersList = listMarks();
+        return 'data:text/json,' + encodeURIComponent(JSON.stringify({'pos': pos, 'markers': markersList}));
       };
 
-      this.addMarkTo = function addMark(){
+      this.addMarkTo = function addMarkTo(text, x, y){
+        point = L.containerPointToLatLng(x, y);
+        markers.push({'marker': marker, 'LatLng': point, 'text': text});
+        marker = L.marker(point).addTo(map);
+        marker.on('click', function(e){
+          this.bindPop(text).openPopup();
+        });
       };
 
       this.toggleFollow = function toggleFollow(){
@@ -68,4 +77,26 @@ var Map = new function CanvasMap(){
           map.locate({'watch': true, 'setView': true});
         }
       };
+
+      this.loadPos = function loadPos(file){
+        var reader = new FileReader();
+        reader.onload = function(e){
+          posJSON = JSON.parse(reader.result);
+          if(overlay){
+            putOverlay();
+          }
+        };
+        reader.readAsText(file);
+      }
+
+      this.loadImg = function loadImg(file){
+        var reader = new FileReader();
+        reader.onload = function(e){
+          overlay = reder.result;
+          if(posJSON){
+            putOverlay();
+          }
+        }
+        reader.readAsDataURL();
+      }
 };
