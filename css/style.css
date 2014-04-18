@@ -229,8 +229,12 @@ a:hover {
 	bottom:10px;
 }
 
-.inputfile {
-    color: #4D4D4D; 
+#inputfile {
+	position:absolute;
+  color: #4D4D4D; 
 	font-family: JOKERMAN;
 	font-size: 14px; 
+	z-index:10;
+	right: 10px;
+	bottom:10px;
 }
