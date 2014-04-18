@@ -3,33 +3,32 @@
 }
 #WRAPPER {
 	margin:0 auto;
-	width:750px;
-	height:700px;
+	width:1920px;
+	height:1080px;
 	padding:0 0px;
 	background-color:#698B22;
-	/*background:url("http://img02.tooopen.com/images/20140401/sy_58062953384.jpg	");*/
 	overflow:auto;
 }
 
 #Wrapper2 {
 	float:left;
-	width:600px;
-	height:700px;
+	width:1800px;
+	height:1080px;
 	margin:0px;
 	margin:0px;
 	background-color:#FFEC8B;
-	background:url("http://free-texture.net/wp-content/uploads/Brass-HairLine1.jpg");
+	background:url("../pic/golden.jpg");
 	overflow:hidden;
 	position:relative;
 }
 
 #Function {
-	margin-left:600px;
+	margin-left:1800px;
 	margin-top:0px;
-	width:150px;
-	height:700px;
+	width:120px;
+	height:1080px;
 	background-color:#FFA500;
-	background:url("http://pic19.nipic.com/20120323/9137309_112359193155_2.jpg");
+	background:url("../pic/silver1.jpg");
 }
 
 button {
@@ -37,7 +36,7 @@ button {
 	font-size:130%;
 	font-family: JOKERMAN;
 	margin-left:30px;
-	margin-top:15px;
+	margin-top:25px;
 	width: 80px; 
 	height: 80px; 
 	-moz-border-radius: 40px; 
@@ -125,7 +124,8 @@ button:hover,button.hover {
 .switch.demo1 {
   width: 80px;
   height: 80px;
-  margin-top:15px;
+  margin-top:25px;
+  margin-left:30px;
   border-radius: 50%;
   border:2px #CDC5BF solid; 
 	glow(color=#Ff0000,strength=40);
