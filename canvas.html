@@ -57,12 +57,7 @@
 			<li><a href="" class='dwlink' id="download_meta" image="text/json" download="save.json" style="display:none;">Output Meta</a></li>
 		</div>
     
-		<div id='inputfile'>png:
-			<input type=file id='openfile' name='png file' class="hide_file2"/> <br />
-			meta:
-			<input type=file id='openfile_meta' name='json file' class="hide_file2"/>
-			gpx:
-			<input type=file id='gpxfile' onchange='LoadGPX()' class="hide_file2"/><input></div>
+		
 		
 	</div>
   <div id="Function" >
@@ -80,7 +75,16 @@
 					<label></label>
 				</div>
 	<!-- <button onclick="clearRecords()">Eraser</button> -->
-
+	
+	<div id='inputfile'>png:
+			<input type=file id='openfile' name='png file' class="hide_file2"/> <br /></div>
+			<br />
+	<div id='inputfile'>meta:
+			<input type=file id='openfile_meta' name='json file' class="hide_file2"/></div>
+			<br />
+	<div id='inputfile'>gpx:
+			<input type=file id='gpxfile' onchange='LoadGPX()' class="hide_file2"/></div>
+			<br />
   </div>
 </div>
 
