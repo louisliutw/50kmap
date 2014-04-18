@@ -32,6 +32,9 @@
 			Map.loadImg(png);
 		}
 	}
+  function LoadGPX(){
+		Map.loadGPX(document.getElementById('gpxfile').files[0]);
+	}
 	</script>
 	<script src='js/leaflet.js'></script>
 	<script src='js/gpx.js'></script>
@@ -56,8 +59,11 @@
 		<div id='inputfile'>png:
 			<input type=file id='openfile' name='png file'/> <br />
 			meta:
-			<input type=file id='openfile_meta' name='json file'/></div>
+			<input type=file id='openfile_meta' name='json file'/><br />
+			gpx:
+			<input type=file id='gpxfile' onchange='LoadGPX()'/><input>
 		</div>
+	</div>
   <div id="Function" >
 	<button onclick="Load()">Load</button>
 	<!-- <button onclick="Export()">Export</button> -->

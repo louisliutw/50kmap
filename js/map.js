@@ -15,12 +15,18 @@ var Map = new function CanvasMap(){
       var posJSON = null;
       var overlayImage = null;
       var imageLayer = null;
+      var gpxLayer = [];
 
-      this.reset = function reset(){
+      var reset = function reset(){
         for(var i = 0; i < markers.length; i++){
+          map.removeLayer(markers[i].marker);
         }
+        map.removeLayer(imageLayer);
+        imageLayer = null;
         markers = [];
       };
+
+      this.reset = reset;
 
       var getPos = function getPos(){
         var center = map.getCenter();
@@ -95,6 +101,7 @@ var Map = new function CanvasMap(){
         document.getElementById('Canvas').setAttribute('class', 'pointerDisable');
         document.getElementById('Map').setAttribute('class', 'pointerEnabel');
         map.setView([posJSON.pos.lat, posJSON.pos.lng], posJSON.pos.zoom - 1, {'reset': true});
+        //map.fitBounds([posJSON.pos.lat, posJSON.pos.lng]); //, posJSON.pos.zoom - 1, {'reset': true});
         Map.unfix();
       };
 
@@ -118,5 +125,16 @@ var Map = new function CanvasMap(){
           }
         }
         reader.readAsDataURL(file);
+      }
+
+      this.loadGPX = function loadGPX(file){
+        var reader = new FileReader();
+        reader.onload = function(e){
+          var newLayer = new L.GPX(reader.result, {async: true}).on('loaded',
+              function(e){
+                map.fitBound(e.target.getBounds());
+              }).addTo(map);
+        }
+        reader.readAsText(file);
       }
 };
