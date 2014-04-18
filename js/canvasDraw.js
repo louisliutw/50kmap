@@ -14,9 +14,9 @@
       this.isEraser = false;
       //this.Timer=null;//橡皮擦启动计时器
       //this.radius=5;
-      this.storageColor = "#000000";
+      this.storageColor = "#0033CC";
       this.eraserRadius = 15; //擦除半径值
-      this.color = ["#000000", "#FA0300"]; //画笔颜色值
+      this.color = ["#0033CC", "#FA0300"]; //画笔颜色值
       this.colorID = 0;
       this.fontWeight = [2, 5, 8];
       this.$ = function(id) {
