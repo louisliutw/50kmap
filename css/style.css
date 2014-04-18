@@ -211,7 +211,7 @@ li > a{
 	font-size: 14px; 
 	text-decoration: none; 
 	
-	background:url("http://free-texture.net/wp-content/uploads/Brass-HairLine1.jpg")#efefef no-repeat; 
+	background:url("../pic/golden.jpg")#efefef no-repeat; 
 }
 a:hover {  
 	box-shadow:1px 1px 0px #666;
@@ -246,7 +246,7 @@ a:hover {
 	height: 60px;
 	border-radius: 10px; 
 	cursor: pointer;
-	background:url("http://free-texture.net/wp-content/uploads/Brass-HairLine1.jpg");
+	background:url("../pic/golden.jpg");
 	opacity:0.6;
 	filter:alpha(opacity=40);
 	
