@@ -3,8 +3,8 @@
 }
 #WRAPPER {
 	margin:0 auto;
-	width:1920px;
-	height:1080px;
+	width:1024px;
+	height:768px;
 	padding:0 0px;
 	background-color:#698B22;
 	overflow:auto;
@@ -12,8 +12,9 @@
 
 #Wrapper2 {
 	float:left;
-	width:1800px;
-	height:1080px;
+	width:904px;
+	/*height:768px;*/
+        height:100%;
 	margin:0px;
 	margin:0px;
 	background-color:#FFEC8B;
@@ -23,10 +24,11 @@
 }
 
 #Function {
-	margin-left:1800px;
+	margin-left:904px;
 	margin-top:0px;
 	width:120px;
-	height:1080px;
+	/*height:1080px;*/
+        height:100%;
 	background-color:#FFA500;
 	background:url("../pic/silver1.jpg");
 }
@@ -36,9 +38,9 @@ button {
 	font-size:130%;
 	font-family: JOKERMAN;
 	margin-left:30px;
-	margin-top:25px;
+	margin-top:18px;
 	width: 80px; 
-	height: 80px; 
+	height: 50px; 
 	-moz-border-radius: 40px; 
 	-webkit-border-radius: 40px; 
 	border-radius: 40px; 
@@ -95,7 +97,7 @@ button:hover,button.hover {
 }
 
 .switch {
-  margin: 50px auto;
+  margin: 18px auto;
   position: relative;
 }
 
@@ -122,9 +124,9 @@ button:hover,button.hover {
 /* DEMO 1 */
 
 .switch.demo1 {
-  width: 80px;
-  height: 80px;
-  margin-top:25px;
+  width: 50px;
+  height: 50px;
+  margin-top:18px;
   margin-left:30px;
   border-radius: 50%;
   border:2px #CDC5BF solid; 
@@ -232,25 +234,24 @@ a:hover {
 
 #inputfile {
 	position:relative;
-    color: #4D4D4D; 
+        color: #4D4D4D; 
 	font-family: JOKERMAN;
 	font-weight:bold;
 	text-shadow:2px  2px  2px  #CCCCCC;
-	font-size: 24px; 
+	font-size: 18px; 
 	z-index:10;
 	right: 0px;
 	bottom:0px;
 	margin-left:30px;
+        margin-top:0px;
 	/*margin-top:0px;*/
 	overflow: hidden;
 	width: 80px;
-	height: 40px;
+	height: 20px;
 	border-radius: 10px; 
 	cursor: pointer;
 	background:url("../pic/tap.png");
 	box-shadow:2px 2px 4px #666;
-	
-	
 }
 
 #inputfile:hover,#inputfile.hover {
