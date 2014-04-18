@@ -59,6 +59,7 @@
         var touch = t.touch ? e.touches[0] : e;
         var _x = touch.clientX - $('#myCanvas').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
         var _y = touch.clientY - $('#myCanvas').offset().top; //鼠标在画布上的y坐标，以画布左上角为起点
+        e.preventDefault();
         // console.log($('#Wrapper2').offset().left);
         if(t.markLock){
           t.markX = _x;
@@ -76,6 +77,7 @@
       /*鼠标移动事件*/
       this.canvas['on' + t.MoveEvent] = function(e) {
         var touch = t.touch ? e.touches[0] : e;
+        e.preventDefault();
         if (t.lock) //t.lock为true则执行
         {
           var _x = touch.clientX - $('#myCanvas').offset().left; //鼠标在画布上的x坐标，以画布左上角为起点
@@ -92,6 +94,7 @@
         }
       };
       this.canvas['on' + t.EndEvent] = function(e) {
+        e.preventDefault();
         /*重置数据*/
         t.lock = false;
         t.x = [];
