@@ -205,7 +205,7 @@ button:hover,button.hover {
 
 li > a{
 	border-radius: 8px;
-	box-shadow:2px 2px 4px #666;
+	box-shadow:4px 4px 8px #666;
     color: #4D4D4D; 
 	font-family: JOKERMAN;
 	font-size: 34px; 
@@ -236,7 +236,7 @@ a:hover {
 	font-family: JOKERMAN;
 	font-weight:bold;
 	text-shadow:2px  2px  2px  #CCCCCC;
-	font-size: 14px; 
+	font-size: 24px; 
 	z-index:10;
 	right: 0px;
 	bottom:0px;
@@ -253,6 +253,9 @@ a:hover {
 	
 }
 
+#inputfile:hover,#inputfile.hover {
+	box-shadow:1px 1px 1px 2px #fff;
+}
 
 input {
 margin: 0em;
