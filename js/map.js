@@ -16,6 +16,19 @@ var Map = new function CanvasMap(){
       var overlayImage = null;
       var imageLayer = null;
       var gpxLayer = [];
+      var positionMark = null;
+
+
+      /*
+      map.on('locationerror', function(e){
+        console.log('locationError');
+        console.log(e);
+        if(positionMark){
+          map.removeLayer(positionMark);
+          positionMark = null;
+        };
+      });
+      */
 
       var reset = function reset(){
         for(var i = 0; i < markers.length; i++){
@@ -81,13 +94,29 @@ var Map = new function CanvasMap(){
         return r;
       };
 
+      var locationEventHandler = function locationEventHandler(e){
+        console.log(e.latlng);
+        console.log(positionMark);
+        if(positionMark){
+          positionMark.setLatLng(e.latlng);
+        }else{
+          positionMark = L.marker(e.latlng, {'clickable':false}).addTo(map);
+        }
+        positionMark.update();
+      };
       this.toggleFollow = function toggleFollow(){
         if(follow == true){
           follow = false;
-          map.locate({'watch': false, 'setView': false});
+          map.locate({'watch': false, 'setView': false, 'maximumAge':0});
+          if(positionMark){
+            map.removeLayer(positionMark);
+            positionMark = null;
+          };
+          map.off('locationfound', locationEventHandler);
         }else{
           follow = true;
-          map.locate({'watch': true, 'setView': true});
+          map.locate({'watch': true, 'setView': true, 'timeout': 1000, 'maximumAge': 1000000});
+          map.on('locationfound', locationEventHandler);
         }
       };
 
@@ -102,6 +131,7 @@ var Map = new function CanvasMap(){
         document.getElementById('Map').setAttribute('class', 'pointerEnabel');
         map.setView([posJSON.pos.lat, posJSON.pos.lng], posJSON.pos.zoom - 1, {'reset': true});
         //map.fitBounds([posJSON.pos.lat, posJSON.pos.lng]); //, posJSON.pos.zoom - 1, {'reset': true});
+				console.log('putOverlap');
         Map.unfix();
       };
 
