@@ -242,7 +242,8 @@ a:hover {
 	right: 10px;
 	bottom:10px;
 	overflow: hidden;
-	width:300px;
+	width: 60px;
+	height: 50px;
 	border-radius: 10px; 
 	cursor: pointer;
 	background:url("http://free-texture.net/wp-content/uploads/Brass-HairLine1.jpg");
