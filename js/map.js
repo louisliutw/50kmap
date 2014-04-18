@@ -161,8 +161,8 @@ var Map = new function CanvasMap(){
         var reader = new FileReader();
         reader.onload = function(e){
           var newLayer = new L.GPX(reader.result, {async: true}).on('loaded',
-              function(e){
-                map.fitBound(e.target.getBounds());
+              function(e2){
+                map.fitBounds(e2.target.getBounds());
               }).addTo(map);
         }
         reader.readAsText(file);
