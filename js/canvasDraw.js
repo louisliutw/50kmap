@@ -1,4 +1,4 @@
-(function() {
+//(function() {
   var paint = {
     init: function() {
       this.load();
@@ -279,4 +279,4 @@
   };
   paint.init();
   // init2();
-})();
+//})();
