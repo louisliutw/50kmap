@@ -231,29 +231,28 @@ a:hover {
 
 
 #inputfile {
-	text-decoration: underline;
-	position:absolute;
+	position:relative;
     color: #4D4D4D; 
 	font-family: JOKERMAN;
 	font-weight:bold;
 	text-shadow:2px  2px  2px  #CCCCCC;
 	font-size: 14px; 
 	z-index:10;
-	right: 10px;
-	bottom:10px;
+	right: 0px;
+	bottom:0px;
+	margin-left:30px;
+	/*margin-top:0px;*/
 	overflow: hidden;
-	width: 60px;
-	height: 60px;
+	width: 80px;
+	height: 40px;
 	border-radius: 10px; 
 	cursor: pointer;
-	background:url("../pic/golden.jpg");
-	opacity:0.6;
-	filter:alpha(opacity=40);
-	
-	border:2px  2px 2px#CDC5BF solid; 
-	glow(color=#Ff0000,strength=40);
+	background:url("../pic/tap.png");
 	box-shadow:2px 2px 4px #666;
+	
+	
 }
+
 
 input {
 margin: 0em;
